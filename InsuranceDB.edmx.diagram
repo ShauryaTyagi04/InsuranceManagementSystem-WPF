@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f1d843a0251f46ff82e61a9ace7e4087" Name="Diagram1" ZoomLevel="124">
+        <EntityTypeShape EntityType="InsuranceManagementSystemModel.Customers" Width="1.5" PointX="0.625" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="InsuranceManagementSystemModel.Employees" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InsuranceManagementSystemModel.LifeInsurance" Width="1.5" PointX="6.625" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="InsuranceManagementSystemModel.Policies" Width="1.5" PointX="3.125" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="InsuranceManagementSystemModel.TravelInsurance" Width="1.5" PointX="4.625" PointY="6.375" IsExpanded="true" />
+        <AssociationConnector Association="InsuranceManagementSystemModel.FK__Policies__Custom__7D439ABD" ManuallyRouted="false" />
+        <AssociationConnector Association="InsuranceManagementSystemModel.FK__LifeInsur__Polic__4A8310C6" ManuallyRouted="false" />
+        <AssociationConnector Association="InsuranceManagementSystemModel.FK__TravelIns__Polic__625A9A57" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="InsuranceManagementSystemModel.CarInsurance" Width="1.5" PointX="5.25" PointY="1.125" />
+        <AssociationConnector Association="InsuranceManagementSystemModel.FK__CarInsura__Polic__76619304" />
+        <EntityTypeShape EntityType="InsuranceManagementSystemModel.HomeInsurance" Width="1.5" PointX="7.375" PointY="2" />
+        <AssociationConnector Association="InsuranceManagementSystemModel.FK__HomeInsur__Polic__09746778" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

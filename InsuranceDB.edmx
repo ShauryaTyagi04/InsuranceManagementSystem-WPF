@@ -1,0 +1,641 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="InsuranceManagementSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CarInsurance">
+          <Key>
+            <PropertyRef Name="CInsuranceID" />
+          </Key>
+          <Property Name="CInsuranceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Make" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Model" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Colour" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Registration" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="License_Plate" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Council" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="License_Driver" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CoverageAmount" Type="float" Nullable="false" />
+          <Property Name="IsApproverd" Type="bit" Nullable="false" />
+          <Property Name="PolicyID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DOB" Type="date" Nullable="false" />
+          <Property Name="ContactNumber" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="AlternateContactNumber" Type="nvarchar" MaxLength="15" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="100" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="PostCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="Sex" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="MaritalStatus" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Nationality" Type="nvarchar" MaxLength="50" />
+          <Property Name="Occupation" Type="nvarchar" MaxLength="100" />
+          <Property Name="NationalInsurance" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="isApproved" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Role" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="isApproved" Type="bit" />
+        </EntityType>
+        <EntityType Name="HomeInsurance">
+          <Key>
+            <PropertyRef Name="HInsuranceID" />
+          </Key>
+          <Property Name="HInsuranceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Property_Address" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Property_Value" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Lease" Type="date" Nullable="false" />
+          <Property Name="Legal_Owner" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Owner_Contact" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Owner_Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CoverageAmount" Type="float" Nullable="false" />
+          <Property Name="IsApproverd" Type="bit" Nullable="false" />
+          <Property Name="PolicyID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LifeInsurance">
+          <Key>
+            <PropertyRef Name="LInsuranceID" />
+          </Key>
+          <Property Name="LInsuranceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Height_cm" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Weight_kg" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="NHSNumber" Type="varchar" MaxLength="20" />
+          <Property Name="Health_Issues" Type="varchar" MaxLength="255" />
+          <Property Name="Income" Type="varchar" MaxLength="20" />
+          <Property Name="Benefitiary" Type="varchar" MaxLength="100" />
+          <Property Name="Relationship_B" Type="varchar" MaxLength="100" />
+          <Property Name="CoverageAmount" Type="float" Nullable="false" />
+          <Property Name="Year_10" Type="bit" Nullable="false" />
+          <Property Name="Year_20" Type="bit" Nullable="false" />
+          <Property Name="Year_30" Type="bit" Nullable="false" />
+          <Property Name="Univesal" Type="bit" Nullable="false" />
+          <Property Name="Whole" Type="bit" Nullable="false" />
+          <Property Name="Variable" Type="bit" Nullable="false" />
+          <Property Name="Family" Type="bit" Nullable="false" />
+          <Property Name="Debt" Type="bit" Nullable="false" />
+          <Property Name="Estate" Type="bit" Nullable="false" />
+          <Property Name="Business" Type="bit" Nullable="false" />
+          <Property Name="Gaurantee" Type="bit" Nullable="false" />
+          <Property Name="Unemployed" Type="bit" Nullable="false" />
+          <Property Name="Self_E" Type="bit" Nullable="false" />
+          <Property Name="Employee" Type="bit" Nullable="false" />
+          <Property Name="IsApproverd" Type="bit" Nullable="false" />
+          <Property Name="PolicyID" Type="int" />
+        </EntityType>
+        <EntityType Name="Policies">
+          <Key>
+            <PropertyRef Name="PolicyID" />
+          </Key>
+          <Property Name="PolicyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="EndDate" Type="date" Nullable="false" />
+          <Property Name="CarInsurance" Type="bit" Nullable="false" />
+          <Property Name="HomeInsurance" Type="bit" Nullable="false" />
+          <Property Name="LifeInsurance" Type="bit" Nullable="false" />
+          <Property Name="TravelInsurance" Type="bit" Nullable="false" />
+          <Property Name="PremiumAmount" Type="float" Nullable="false" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="CustomerID" Type="int" />
+        </EntityType>
+        <EntityType Name="TravelInsurance">
+          <Key>
+            <PropertyRef Name="TInsuranceID" />
+          </Key>
+          <Property Name="TInsuranceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Destination" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="TravelDate" Type="date" Nullable="false" />
+          <Property Name="ReturnDate" Type="date" Nullable="false" />
+          <Property Name="InternationalContactNumber" Type="varchar" MaxLength="20" />
+          <Property Name="CoverageAmount" Type="float" Nullable="false" />
+          <Property Name="LostBags" Type="bit" Nullable="false" />
+          <Property Name="LegalCosts" Type="bit" Nullable="false" />
+          <Property Name="EmergencyMedicalExpenses" Type="bit" Nullable="false" />
+          <Property Name="CancellationCost" Type="bit" Nullable="false" />
+          <Property Name="Single" Type="bit" Nullable="false" />
+          <Property Name="Solo" Type="bit" Nullable="false" />
+          <Property Name="European" Type="bit" Nullable="false" />
+          <Property Name="Annual" Type="bit" Nullable="false" />
+          <Property Name="Family" Type="bit" Nullable="false" />
+          <Property Name="Summer" Type="bit" Nullable="false" />
+          <Property Name="Gap" Type="bit" Nullable="false" />
+          <Property Name="Worldwide" Type="bit" Nullable="false" />
+          <Property Name="Winter" Type="bit" Nullable="false" />
+          <Property Name="IsApproverd" Type="bit" Nullable="false" />
+          <Property Name="PolicyID" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__CarInsura__Polic__76619304">
+          <End Role="Policies" Type="Self.Policies" Multiplicity="1" />
+          <End Role="CarInsurance" Type="Self.CarInsurance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Policies">
+              <PropertyRef Name="PolicyID" />
+            </Principal>
+            <Dependent Role="CarInsurance">
+              <PropertyRef Name="PolicyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HomeInsur__Polic__09746778">
+          <End Role="Policies" Type="Self.Policies" Multiplicity="1" />
+          <End Role="HomeInsurance" Type="Self.HomeInsurance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Policies">
+              <PropertyRef Name="PolicyID" />
+            </Principal>
+            <Dependent Role="HomeInsurance">
+              <PropertyRef Name="PolicyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LifeInsur__Polic__4A8310C6">
+          <End Role="Policies" Type="Self.Policies" Multiplicity="0..1" />
+          <End Role="LifeInsurance" Type="Self.LifeInsurance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Policies">
+              <PropertyRef Name="PolicyID" />
+            </Principal>
+            <Dependent Role="LifeInsurance">
+              <PropertyRef Name="PolicyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Policies__Custom__7D439ABD">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+          <End Role="Policies" Type="Self.Policies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Policies">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TravelIns__Polic__625A9A57">
+          <End Role="Policies" Type="Self.Policies" Multiplicity="1" />
+          <End Role="TravelInsurance" Type="Self.TravelInsurance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Policies">
+              <PropertyRef Name="PolicyID" />
+            </Principal>
+            <Dependent Role="TravelInsurance">
+              <PropertyRef Name="PolicyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="InsuranceManagementSystemModelStoreContainer">
+          <EntitySet Name="CarInsurance" EntityType="Self.CarInsurance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HomeInsurance" EntityType="Self.HomeInsurance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LifeInsurance" EntityType="Self.LifeInsurance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Policies" EntityType="Self.Policies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TravelInsurance" EntityType="Self.TravelInsurance" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__CarInsura__Polic__76619304" Association="Self.FK__CarInsura__Polic__76619304">
+            <End Role="Policies" EntitySet="Policies" />
+            <End Role="CarInsurance" EntitySet="CarInsurance" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HomeInsur__Polic__09746778" Association="Self.FK__HomeInsur__Polic__09746778">
+            <End Role="Policies" EntitySet="Policies" />
+            <End Role="HomeInsurance" EntitySet="HomeInsurance" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LifeInsur__Polic__4A8310C6" Association="Self.FK__LifeInsur__Polic__4A8310C6">
+            <End Role="Policies" EntitySet="Policies" />
+            <End Role="LifeInsurance" EntitySet="LifeInsurance" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Policies__Custom__7D439ABD" Association="Self.FK__Policies__Custom__7D439ABD">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Policies" EntitySet="Policies" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TravelIns__Polic__625A9A57" Association="Self.FK__TravelIns__Polic__625A9A57">
+            <End Role="Policies" EntitySet="Policies" />
+            <End Role="TravelInsurance" EntitySet="TravelInsurance" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="InsuranceManagementSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ContactNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AlternateContactNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PostCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Sex" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaritalStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Occupation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NationalInsurance" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="isApproved" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Policies" Relationship="Self.FK__Policies__Custom__7D439ABD" FromRole="Customers" ToRole="Policies" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Role" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="isApproved" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="LifeInsurance">
+          <Key>
+            <PropertyRef Name="LInsuranceID" />
+          </Key>
+          <Property Name="LInsuranceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Height_cm" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Weight_kg" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NHSNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Health_Issues" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Income" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Benefitiary" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Relationship_B" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CoverageAmount" Type="Double" Nullable="false" />
+          <Property Name="Year_10" Type="Boolean" Nullable="false" />
+          <Property Name="Year_20" Type="Boolean" Nullable="false" />
+          <Property Name="Year_30" Type="Boolean" Nullable="false" />
+          <Property Name="Univesal" Type="Boolean" Nullable="false" />
+          <Property Name="Whole" Type="Boolean" Nullable="false" />
+          <Property Name="Variable" Type="Boolean" Nullable="false" />
+          <Property Name="Family" Type="Boolean" Nullable="false" />
+          <Property Name="Debt" Type="Boolean" Nullable="false" />
+          <Property Name="Estate" Type="Boolean" Nullable="false" />
+          <Property Name="Business" Type="Boolean" Nullable="false" />
+          <Property Name="Gaurantee" Type="Boolean" Nullable="false" />
+          <Property Name="Unemployed" Type="Boolean" Nullable="false" />
+          <Property Name="Self_E" Type="Boolean" Nullable="false" />
+          <Property Name="Employee" Type="Boolean" Nullable="false" />
+          <Property Name="IsApproverd" Type="Boolean" Nullable="false" />
+          <Property Name="PolicyID" Type="Int32" />
+          <NavigationProperty Name="Policies" Relationship="Self.FK__LifeInsur__Polic__4A8310C6" FromRole="LifeInsurance" ToRole="Policies" />
+        </EntityType>
+        <EntityType Name="Policies">
+          <Key>
+            <PropertyRef Name="PolicyID" />
+          </Key>
+          <Property Name="PolicyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CarInsurance" Type="Boolean" Nullable="false" />
+          <Property Name="HomeInsurance" Type="Boolean" Nullable="false" />
+          <Property Name="LifeInsurance" Type="Boolean" Nullable="false" />
+          <Property Name="TravelInsurance" Type="Boolean" Nullable="false" />
+          <Property Name="PremiumAmount" Type="Double" Nullable="false" />
+          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+          <Property Name="CustomerID" Type="Int32" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK__Policies__Custom__7D439ABD" FromRole="Policies" ToRole="Customers" />
+          <NavigationProperty Name="LifeInsurance1" Relationship="Self.FK__LifeInsur__Polic__4A8310C6" FromRole="Policies" ToRole="LifeInsurance" />
+          <NavigationProperty Name="TravelInsurance1" Relationship="Self.FK__TravelIns__Polic__625A9A57" FromRole="Policies" ToRole="TravelInsurance" />
+          <NavigationProperty Name="CarInsurance1" Relationship="InsuranceManagementSystemModel.FK__CarInsura__Polic__76619304" FromRole="Policies" ToRole="CarInsurance" />
+          <NavigationProperty Name="HomeInsurance1" Relationship="InsuranceManagementSystemModel.FK__HomeInsur__Polic__09746778" FromRole="Policies" ToRole="HomeInsurance" />
+        </EntityType>
+        <EntityType Name="TravelInsurance">
+          <Key>
+            <PropertyRef Name="TInsuranceID" />
+          </Key>
+          <Property Name="TInsuranceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Destination" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TravelDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ReturnDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="InternationalContactNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CoverageAmount" Type="Double" Nullable="false" />
+          <Property Name="LostBags" Type="Boolean" Nullable="false" />
+          <Property Name="LegalCosts" Type="Boolean" Nullable="false" />
+          <Property Name="EmergencyMedicalExpenses" Type="Boolean" Nullable="false" />
+          <Property Name="CancellationCost" Type="Boolean" Nullable="false" />
+          <Property Name="Single" Type="Boolean" Nullable="false" />
+          <Property Name="Solo" Type="Boolean" Nullable="false" />
+          <Property Name="European" Type="Boolean" Nullable="false" />
+          <Property Name="Annual" Type="Boolean" Nullable="false" />
+          <Property Name="Family" Type="Boolean" Nullable="false" />
+          <Property Name="Summer" Type="Boolean" Nullable="false" />
+          <Property Name="Gap" Type="Boolean" Nullable="false" />
+          <Property Name="Worldwide" Type="Boolean" Nullable="false" />
+          <Property Name="Winter" Type="Boolean" Nullable="false" />
+          <Property Name="IsApproverd" Type="Boolean" Nullable="false" />
+          <Property Name="PolicyID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Policies" Relationship="Self.FK__TravelIns__Polic__625A9A57" FromRole="TravelInsurance" ToRole="Policies" />
+        </EntityType>
+        <Association Name="FK__Policies__Custom__7D439ABD">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+          <End Role="Policies" Type="Self.Policies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Policies">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LifeInsur__Polic__4A8310C6">
+          <End Role="Policies" Type="Self.Policies" Multiplicity="0..1" />
+          <End Role="LifeInsurance" Type="Self.LifeInsurance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Policies">
+              <PropertyRef Name="PolicyID" />
+            </Principal>
+            <Dependent Role="LifeInsurance">
+              <PropertyRef Name="PolicyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TravelIns__Polic__625A9A57">
+          <End Role="Policies" Type="Self.Policies" Multiplicity="1" />
+          <End Role="TravelInsurance" Type="Self.TravelInsurance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Policies">
+              <PropertyRef Name="PolicyID" />
+            </Principal>
+            <Dependent Role="TravelInsurance">
+              <PropertyRef Name="PolicyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="InsuranceManagementEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="Self.Customers" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" />
+          <EntitySet Name="LifeInsurance" EntityType="Self.LifeInsurance" />
+          <EntitySet Name="Policies" EntityType="Self.Policies" />
+          <EntitySet Name="TravelInsurance" EntityType="Self.TravelInsurance" />
+          <AssociationSet Name="FK__Policies__Custom__7D439ABD" Association="Self.FK__Policies__Custom__7D439ABD">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Policies" EntitySet="Policies" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LifeInsur__Polic__4A8310C6" Association="Self.FK__LifeInsur__Polic__4A8310C6">
+            <End Role="Policies" EntitySet="Policies" />
+            <End Role="LifeInsurance" EntitySet="LifeInsurance" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TravelIns__Polic__625A9A57" Association="Self.FK__TravelIns__Polic__625A9A57">
+            <End Role="Policies" EntitySet="Policies" />
+            <End Role="TravelInsurance" EntitySet="TravelInsurance" />
+          </AssociationSet>
+          <EntitySet Name="CarInsurance" EntityType="InsuranceManagementSystemModel.CarInsurance" />
+          <AssociationSet Name="FK__CarInsura__Polic__76619304" Association="InsuranceManagementSystemModel.FK__CarInsura__Polic__76619304">
+            <End Role="Policies" EntitySet="Policies" />
+            <End Role="CarInsurance" EntitySet="CarInsurance" />
+          </AssociationSet>
+          <EntitySet Name="HomeInsurance" EntityType="InsuranceManagementSystemModel.HomeInsurance" />
+          <AssociationSet Name="FK__HomeInsur__Polic__09746778" Association="InsuranceManagementSystemModel.FK__HomeInsur__Polic__09746778">
+            <End Role="Policies" EntitySet="Policies" />
+            <End Role="HomeInsurance" EntitySet="HomeInsurance" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CarInsurance">
+          <Key>
+            <PropertyRef Name="CInsuranceID" />
+          </Key>
+          <Property Name="CInsuranceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Make" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Model" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Colour" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Registration" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="License_Plate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Council" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="License_Driver" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CoverageAmount" Type="Double" Nullable="false" />
+          <Property Name="IsApproverd" Type="Boolean" Nullable="false" />
+          <Property Name="PolicyID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Policies" Relationship="InsuranceManagementSystemModel.FK__CarInsura__Polic__76619304" FromRole="CarInsurance" ToRole="Policies" />
+        </EntityType>
+        <Association Name="FK__CarInsura__Polic__76619304">
+          <End Type="InsuranceManagementSystemModel.Policies" Role="Policies" Multiplicity="1" />
+          <End Type="InsuranceManagementSystemModel.CarInsurance" Role="CarInsurance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Policies">
+              <PropertyRef Name="PolicyID" />
+            </Principal>
+            <Dependent Role="CarInsurance">
+              <PropertyRef Name="PolicyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="HomeInsurance">
+          <Key>
+            <PropertyRef Name="HInsuranceID" />
+          </Key>
+          <Property Name="HInsuranceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Property_Address" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Property_Value" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Lease" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Legal_Owner" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_Contact" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Owner_Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CoverageAmount" Type="Double" Nullable="false" />
+          <Property Name="IsApproverd" Type="Boolean" Nullable="false" />
+          <Property Name="PolicyID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Policies" Relationship="InsuranceManagementSystemModel.FK__HomeInsur__Polic__09746778" FromRole="HomeInsurance" ToRole="Policies" />
+        </EntityType>
+        <Association Name="FK__HomeInsur__Polic__09746778">
+          <End Type="InsuranceManagementSystemModel.Policies" Role="Policies" Multiplicity="1" />
+          <End Type="InsuranceManagementSystemModel.HomeInsurance" Role="HomeInsurance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Policies">
+              <PropertyRef Name="PolicyID" />
+            </Principal>
+            <Dependent Role="HomeInsurance">
+              <PropertyRef Name="PolicyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="InsuranceManagementSystemModelStoreContainer" CdmEntityContainer="InsuranceManagementEntities">
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="InsuranceManagementSystemModel.Customers">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+                <ScalarProperty Name="AlternateContactNumber" ColumnName="AlternateContactNumber" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+                <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+                <ScalarProperty Name="NationalInsurance" ColumnName="NationalInsurance" />
+                <ScalarProperty Name="isApproved" ColumnName="isApproved" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="InsuranceManagementSystemModel.Employees">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="isApproved" ColumnName="isApproved" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LifeInsurance">
+            <EntityTypeMapping TypeName="InsuranceManagementSystemModel.LifeInsurance">
+              <MappingFragment StoreEntitySet="LifeInsurance">
+                <ScalarProperty Name="LInsuranceID" ColumnName="LInsuranceID" />
+                <ScalarProperty Name="Height_cm" ColumnName="Height_cm" />
+                <ScalarProperty Name="Weight_kg" ColumnName="Weight_kg" />
+                <ScalarProperty Name="NHSNumber" ColumnName="NHSNumber" />
+                <ScalarProperty Name="Health_Issues" ColumnName="Health_Issues" />
+                <ScalarProperty Name="Income" ColumnName="Income" />
+                <ScalarProperty Name="Benefitiary" ColumnName="Benefitiary" />
+                <ScalarProperty Name="Relationship_B" ColumnName="Relationship_B" />
+                <ScalarProperty Name="CoverageAmount" ColumnName="CoverageAmount" />
+                <ScalarProperty Name="Year_10" ColumnName="Year_10" />
+                <ScalarProperty Name="Year_20" ColumnName="Year_20" />
+                <ScalarProperty Name="Year_30" ColumnName="Year_30" />
+                <ScalarProperty Name="Univesal" ColumnName="Univesal" />
+                <ScalarProperty Name="Whole" ColumnName="Whole" />
+                <ScalarProperty Name="Variable" ColumnName="Variable" />
+                <ScalarProperty Name="Family" ColumnName="Family" />
+                <ScalarProperty Name="Debt" ColumnName="Debt" />
+                <ScalarProperty Name="Estate" ColumnName="Estate" />
+                <ScalarProperty Name="Business" ColumnName="Business" />
+                <ScalarProperty Name="Gaurantee" ColumnName="Gaurantee" />
+                <ScalarProperty Name="Unemployed" ColumnName="Unemployed" />
+                <ScalarProperty Name="Self_E" ColumnName="Self_E" />
+                <ScalarProperty Name="Employee" ColumnName="Employee" />
+                <ScalarProperty Name="IsApproverd" ColumnName="IsApproverd" />
+                <ScalarProperty Name="PolicyID" ColumnName="PolicyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Policies">
+            <EntityTypeMapping TypeName="InsuranceManagementSystemModel.Policies">
+              <MappingFragment StoreEntitySet="Policies">
+                <ScalarProperty Name="PolicyID" ColumnName="PolicyID" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="CarInsurance" ColumnName="CarInsurance" />
+                <ScalarProperty Name="HomeInsurance" ColumnName="HomeInsurance" />
+                <ScalarProperty Name="LifeInsurance" ColumnName="LifeInsurance" />
+                <ScalarProperty Name="TravelInsurance" ColumnName="TravelInsurance" />
+                <ScalarProperty Name="PremiumAmount" ColumnName="PremiumAmount" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TravelInsurance">
+            <EntityTypeMapping TypeName="InsuranceManagementSystemModel.TravelInsurance">
+              <MappingFragment StoreEntitySet="TravelInsurance">
+                <ScalarProperty Name="TInsuranceID" ColumnName="TInsuranceID" />
+                <ScalarProperty Name="Destination" ColumnName="Destination" />
+                <ScalarProperty Name="TravelDate" ColumnName="TravelDate" />
+                <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
+                <ScalarProperty Name="InternationalContactNumber" ColumnName="InternationalContactNumber" />
+                <ScalarProperty Name="CoverageAmount" ColumnName="CoverageAmount" />
+                <ScalarProperty Name="LostBags" ColumnName="LostBags" />
+                <ScalarProperty Name="LegalCosts" ColumnName="LegalCosts" />
+                <ScalarProperty Name="EmergencyMedicalExpenses" ColumnName="EmergencyMedicalExpenses" />
+                <ScalarProperty Name="CancellationCost" ColumnName="CancellationCost" />
+                <ScalarProperty Name="Single" ColumnName="Single" />
+                <ScalarProperty Name="Solo" ColumnName="Solo" />
+                <ScalarProperty Name="European" ColumnName="European" />
+                <ScalarProperty Name="Annual" ColumnName="Annual" />
+                <ScalarProperty Name="Family" ColumnName="Family" />
+                <ScalarProperty Name="Summer" ColumnName="Summer" />
+                <ScalarProperty Name="Gap" ColumnName="Gap" />
+                <ScalarProperty Name="Worldwide" ColumnName="Worldwide" />
+                <ScalarProperty Name="Winter" ColumnName="Winter" />
+                <ScalarProperty Name="IsApproverd" ColumnName="IsApproverd" />
+                <ScalarProperty Name="PolicyID" ColumnName="PolicyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CarInsurance">
+            <EntityTypeMapping TypeName="InsuranceManagementSystemModel.CarInsurance">
+              <MappingFragment StoreEntitySet="CarInsurance">
+                <ScalarProperty Name="PolicyID" ColumnName="PolicyID" />
+                <ScalarProperty Name="IsApproverd" ColumnName="IsApproverd" />
+                <ScalarProperty Name="CoverageAmount" ColumnName="CoverageAmount" />
+                <ScalarProperty Name="License_Driver" ColumnName="License_Driver" />
+                <ScalarProperty Name="Council" ColumnName="Council" />
+                <ScalarProperty Name="License_Plate" ColumnName="License_Plate" />
+                <ScalarProperty Name="Registration" ColumnName="Registration" />
+                <ScalarProperty Name="Colour" ColumnName="Colour" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Make" ColumnName="Make" />
+                <ScalarProperty Name="CInsuranceID" ColumnName="CInsuranceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HomeInsurance">
+            <EntityTypeMapping TypeName="InsuranceManagementSystemModel.HomeInsurance">
+              <MappingFragment StoreEntitySet="HomeInsurance">
+                <ScalarProperty Name="PolicyID" ColumnName="PolicyID" />
+                <ScalarProperty Name="IsApproverd" ColumnName="IsApproverd" />
+                <ScalarProperty Name="CoverageAmount" ColumnName="CoverageAmount" />
+                <ScalarProperty Name="Owner_Email" ColumnName="Owner_Email" />
+                <ScalarProperty Name="Owner_Contact" ColumnName="Owner_Contact" />
+                <ScalarProperty Name="Legal_Owner" ColumnName="Legal_Owner" />
+                <ScalarProperty Name="Lease" ColumnName="Lease" />
+                <ScalarProperty Name="Property_Value" ColumnName="Property_Value" />
+                <ScalarProperty Name="Property_Address" ColumnName="Property_Address" />
+                <ScalarProperty Name="HInsuranceID" ColumnName="HInsuranceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,227 @@
+﻿<Window x:Class="Insurance_Management_System.Staff.ViewCar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Insurance_Management_System.Staff"
+        mc:Ignorable="d"
+        Title="ViewCar" Height="{Binding Source={x:Static SystemParameters.WorkArea}, Path=Height}" 
+Width="{Binding Source={x:Static SystemParameters.WorkArea}, Path=Width}" WindowState="Maximized" ShowInTaskbar="True">
+    <Grid>
+        <!--Navbar Start-->
+        <Rectangle HorizontalAlignment="Center" Height="50" VerticalAlignment="Top" Width="1536" Fill="#FF2A3CCA"/>
+        <Button Content="Logout" 
+ Cursor="Hand"
+ HorizontalAlignment="Left" 
+ Margin="1428,10,0,0" 
+ VerticalAlignment="Top" 
+ Width="98" 
+ Height="30" 
+ FontSize="20" 
+ Background="#FF2A3CCA" 
+ Foreground="White" 
+ RenderTransformOrigin="0.5,0.5"
+         Click="LoginButton_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" 
+     BorderBrush="White" 
+     BorderThickness="1" 
+     CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" 
+                   VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Content="Home" 
+ Cursor="Hand"
+ HorizontalAlignment="Left" 
+ Margin="10,10,0,0" 
+ VerticalAlignment="Top" 
+ Width="98" 
+ Height="30" 
+ FontSize="20" 
+ Background="#FF2A3CCA" 
+ Foreground="White" 
+ RenderTransformOrigin="0.5,0.5"
+         Click="HomeButton_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" 
+             BorderBrush="White" 
+             BorderThickness="1" 
+             CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" 
+                           VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Border HorizontalAlignment="Left"
+        Height="50"
+        VerticalAlignment="Top"
+        Width="300"
+        Background="#FF2A3CCA"
+        CornerRadius="10"
+        Margin="-28,50,0,0">
+        </Border>
+        <Label Content="CAR INSURANCE" HorizontalAlignment="Left" Margin="17,50,0,0" VerticalAlignment="Top" FontSize="30" Foreground="White"/>
+        <Border HorizontalAlignment="Left"
+                Height="40"
+                VerticalAlignment="Top"
+                Width="221"
+                Background="#FF2A3CCA"
+                CornerRadius="10"
+                Margin="1124,50,0,0">
+        </Border>
+        <Label Content="INSURANCE NUMBER" HorizontalAlignment="Left" Margin="1133,50,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White"/>
+        <ComboBox x:Name="cmbInsuranceID" Margin="1336,50,0,0" VerticalAlignment="Top" FontSize="20" Foreground="Black" Background="#FF2A3CCA" BorderBrush="#FF2A3CCA" Width="200" Height="40" SelectionChanged="cmbInsuranceID_SelectionChanged"/>
+
+        <Label x:Name="txtIsApproved" Content="" HorizontalAlignment="Left" Margin="496,57,0,0" VerticalAlignment="Top" FontSize="25" Width="461"/>
+        <Label Content="Application Status:" HorizontalAlignment="Left" Margin="272,57,0,0" VerticalAlignment="Top" FontSize="25" Width="224"/>
+        <!--Navbar End-->
+
+        <!--Form Start-->
+        <Label Content="Policy Number:" HorizontalAlignment="Left" Margin="82,105,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label x:Name="txtPolicyID" Content="" HorizontalAlignment="Left" Margin="230,105,0,0" VerticalAlignment="Top" FontSize="20" Width="355"/>
+
+        <Label Content="Model" HorizontalAlignment="Left" Margin="972,148,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Border HorizontalAlignment="Left" Margin="974,189,0,0" VerticalAlignment="Top" Width="500" Height="30" 
+    BorderBrush="Black" CornerRadius="10" BorderThickness="1">
+            <TextBox x:Name="txtModel" TextWrapping="Wrap" Text="" FontSize="20" Background="Transparent" BorderThickness="0" 
+        VerticalContentAlignment="Center" HorizontalContentAlignment="Left" />
+        </Border>
+
+        <Label Content="Make (Year)" HorizontalAlignment="Left" Margin="82,148,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Border HorizontalAlignment="Left" Margin="82,189,0,0" VerticalAlignment="Top" Width="500" Height="30" 
+            BorderBrush="Black" CornerRadius="10" BorderThickness="1">
+            <TextBox x:Name="txtMake" TextWrapping="Wrap" Text="" FontSize="20" Background="Transparent" BorderThickness="0" 
+                 VerticalContentAlignment="Center" HorizontalContentAlignment="Left" />
+        </Border>
+
+        <Label Content="Colour" HorizontalAlignment="Left" Margin="82,248,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Border HorizontalAlignment="Left" Margin="82,289,0,0" VerticalAlignment="Top" Width="500" Height="30" 
+    BorderBrush="Black" CornerRadius="10" BorderThickness="1">
+            <TextBox x:Name="txtColour" TextWrapping="Wrap" Text="" FontSize="20" Background="Transparent" BorderThickness="0" 
+         VerticalContentAlignment="Center" HorizontalContentAlignment="Left" />
+        </Border>
+
+        <Label Content="License Plate" HorizontalAlignment="Left" Margin="82,348,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Border HorizontalAlignment="Left" Margin="82,389,0,0" VerticalAlignment="Top" Width="500" Height="30" 
+BorderBrush="Black" CornerRadius="10" BorderThickness="1">
+            <TextBox x:Name="txtLicenseP" TextWrapping="Wrap" Text="" FontSize="20" Background="Transparent" BorderThickness="0" 
+     VerticalContentAlignment="Center" HorizontalContentAlignment="Left" />
+        </Border>
+
+        <Label Content="Driver's License" HorizontalAlignment="Left" Margin="82,448,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Border HorizontalAlignment="Left" Margin="82,489,0,0" VerticalAlignment="Top" Width="500" Height="30" 
+BorderBrush="Black" CornerRadius="10" BorderThickness="1">
+            <TextBox x:Name="txtLicenseD" TextWrapping="Wrap" Text="" FontSize="20" Background="Transparent" BorderThickness="0" 
+     VerticalContentAlignment="Center" HorizontalContentAlignment="Left" />
+        </Border>
+
+        <Label Content="Registration number" HorizontalAlignment="Left" Margin="972,248,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Border HorizontalAlignment="Left" Margin="974,289,0,0" VerticalAlignment="Top" Width="500" Height="30" 
+BorderBrush="Black" CornerRadius="10" BorderThickness="1">
+            <TextBox x:Name="txtRegistration" TextWrapping="Wrap" Text="" FontSize="20" Background="Transparent" BorderThickness="0" 
+     VerticalContentAlignment="Center" HorizontalContentAlignment="Left" />
+        </Border>
+
+        <Label Content="Council" HorizontalAlignment="Left" Margin="972,348,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Border HorizontalAlignment="Left" Margin="974,389,0,0" VerticalAlignment="Top" Width="500" Height="30" 
+BorderBrush="Black" CornerRadius="10" BorderThickness="1">
+            <TextBox x:Name="txtCouncil" TextWrapping="Wrap" Text="" FontSize="20" Background="Transparent" BorderThickness="0" 
+     VerticalContentAlignment="Center" HorizontalContentAlignment="Left" />
+        </Border>
+
+        <Label Content="Coverage Amount" HorizontalAlignment="Left" Margin="972,448,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Border HorizontalAlignment="Left" Margin="974,489,0,0" VerticalAlignment="Top" Width="500" Height="30" 
+BorderBrush="Black" CornerRadius="10" BorderThickness="1">
+            <TextBox x:Name="txtCoverage" TextWrapping="Wrap" Text="" FontSize="20" Background="Transparent" BorderThickness="0" 
+     VerticalContentAlignment="Center" HorizontalContentAlignment="Left" />
+        </Border>
+        <!--Form End-->
+
+        <!--Submit and Remove Buttons-->
+        <Button x:Name="Update" Content="UPDATE" 
+             Cursor="Hand"
+             HorizontalAlignment="Left" 
+             Margin="0,539,0,0" 
+             VerticalAlignment="Top" 
+             Width="768" 
+             Height="30" 
+             FontSize="20" 
+             Background="#FF2A3CCA" 
+             Foreground="White" RenderTransformOrigin="0.5,0.5" Click="Update_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" 
+     BorderBrush="Transparent" 
+     BorderThickness="1" 
+     CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" 
+                   VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="Remove" Content="REMOVE" 
+             Cursor="Hand"
+             HorizontalAlignment="Left" 
+             Margin="768,539,0,0" 
+             VerticalAlignment="Top" 
+             Width="768" 
+             Height="30" 
+             FontSize="20" 
+             Background="#FFCA2A2A" 
+             Foreground="White" RenderTransformOrigin="0.5,0.5" Click="Remove_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" 
+                 BorderBrush="Transparent" 
+                 BorderThickness="1" 
+                 CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" 
+                     VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!--Submit and Remove Buttons End-->
+        <DataGrid x:Name="CarData" AutoGenerateColumns="True" Margin="0,574,0,0" SelectionChanged="CarData_SelectionChanged"/>
+
+    </Grid>
+</Window>
